@@ -34,7 +34,7 @@ export default function Banner() {
                         </a>
                         <div className="w-[1px] h-10 bg-black mt-2 ml-3"></div>
                     </div>
-                    <div className="rotate-90 -mt-24 text-sm font-mono">@williamsrey</div>
+                    <div className="rotate-270 -mt-24 text-sm font-mono">@williamsrey</div>
 
                 </div>
 
