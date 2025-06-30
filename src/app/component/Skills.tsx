@@ -1,29 +1,53 @@
-import { ArrowDown, ArrowLeft, ArrowRight, Atom } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
+import { FaReact } from "react-icons/fa";
+import { motion, Variants } from "framer-motion";
 import ShareButton from "./ShareButton";
 
+const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+
+const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: "easeOut" },
+    },
+};
 
 export default function Skills() {
-    <ShareButton text="Why Choose Me" icon={<ArrowDown size={18} />} />
     return (
         <div className="md:px-4 lg:px-8 z-20 relative -mt-10">
             <section className="bg-black text-white py-16 px-6 lg:rounded-3xl rounded-2xl">
-                <div className="max-w-6xl mx-auto">
-
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
-
+                <motion.div
+                    className="max-w-6xl mx-auto"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={containerVariants}
+                >
+                    {/* Header */}
+                    <motion.div
+                        className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6"
+                        variants={itemVariants}
+                    >
                         <div>
                             <ShareButton
                                 text="Start Project"
                                 icon={<ArrowDown size={18} />}
                                 iconPosition="left"
                             />
-
-                            <h2 className="text-4xl font-bold leading-snug">
+                            <h2 className="text-4xl font-bold leading-snug mt-2">
                                 My Extensive <br />
                                 <span className="text-white">List of Skills</span>
                             </h2>
                         </div>
-
 
                         <div className="text-left md:text-right md:max-w-md">
                             <p className="text-sm mb-4">
@@ -39,38 +63,44 @@ export default function Skills() {
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-                        <div className="bg-[#1a1a1a] p-6 rounded-2xl hover:scale-105 transition-transform">
-                            <Atom className="w-8 h-8 mb-4 text-lime-400" />
-                            <h3 className="font-bold text-lg">HTML & CSS</h3>
-                            <p className="text-sm text-gray-400 mt-2">
-                                Clean and responsive design using modern semantic markup and styling.
-                            </p>
-                        </div>
-
-
-                        <div className="bg-[#1a1a1a] p-6 rounded-2xl transform rotate-[-2deg] hover:scale-105 transition-transform">
-                            <Atom className="w-8 h-8 mb-4 text-lime-400" />
-                            <h3 className="font-bold text-lg">JavaScript</h3>
-                            <p className="text-sm text-gray-400 mt-2">
-                                Interactive, dynamic, and fast frontends powered by JS and modern frameworks.
-                            </p>
-                        </div>
-
-
-                        <div className="bg-[#1a1a1a] p-6 rounded-2xl hover:scale-105 transition-transform">
-                            <Atom className="w-8 h-8 mb-4 text-lime-400" />
-                            <h3 className="font-bold text-lg">Webflow</h3>
-                            <p className="text-sm text-gray-400 mt-2">
-                                Beautiful no-code solutions built with precision using Webflow tools.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                    {/* Skills Grid */}
+                    <motion.div
+                        className="grid grid-cols-1 md:grid-cols-3 gap-6"
+                        variants={containerVariants}
+                    >
+                        {[
+                            {
+                                title: "HTML & CSS",
+                                description:
+                                    "Clean and responsive design using modern semantic markup and styling.",
+                            },
+                            {
+                                title: "JavaScript",
+                                description:
+                                    "Interactive, dynamic, and fast frontends powered by JS and modern frameworks.",
+                                rotate: "-rotate-2",
+                            },
+                            {
+                                title: "Webflow",
+                                description:
+                                    "Beautiful no-code solutions built with precision using Webflow tools.",
+                            },
+                        ].map((skill, i) => (
+                            <motion.div
+                                key={i}
+                                className={`bg-[#1a1a1a] p-6 rounded-2xl hover:scale-105 transition-transform ${skill.rotate || ""
+                                    }`}
+                                variants={itemVariants}
+                            >
+                                <FaReact size={48} color="white" />
+                                <h3 className="font-bold text-lg mt-4">{skill.title}</h3>
+                                <p className="text-sm text-gray-400 mt-2">{skill.description}</p>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </motion.div>
             </section>
         </div>
     );
