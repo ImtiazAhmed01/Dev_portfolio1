@@ -102,7 +102,7 @@ This is a developer portfolio homepage recreated from a Figma design, implemente
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/raintor-portfolio.git
+git clone https://github.com/ImtiazAhmed01/raintor-portfolio.git
 cd raintor-portfolio
 
 # 2. Install dependencies
@@ -110,6 +110,13 @@ npm install
 
 # 3. Run the development server
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+
 
 # 4. Build for production
 npm run build
