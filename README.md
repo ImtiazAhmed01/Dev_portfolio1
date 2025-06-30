@@ -2,7 +2,7 @@
 
 # Developer Portfolio – Frontend Developer Technical Assessment
 
-Welcome to my submission for the Frontend Developer role at **Raintor Ltd.** This project is built as part of the technical assessment, focusing on UI design implementation, responsiveness, component architecture, accessibility, and code quality using the **Next.js** framework and modern frontend best practices.
+ This project is built as part of the technical assessment, focusing on UI design implementation, responsiveness, component architecture, accessibility, and code quality using the **Next.js** framework and modern frontend best practices.
 
 ## 🌐 Live Demo
 
