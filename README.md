@@ -6,8 +6,8 @@ Welcome to my submission for the Frontend Developer role at **Raintor Ltd.** Thi
 
 ## 🌐 Live Demo
 
-**Hosted on Vercel**: [https://your-portfolio.vercel.app](https://your-portfolio.vercel.app](https://devlopme.vercel.app/)  
-**GitHub Repository**: [https://github.com/rusername/raintor-portfolio](https://github.com/ImtiazAhmed01/Dev_portfolio1)
+**Hosted on Vercel**: [Click here](https://devlopme.vercel.app/)  
+
 
 ---
 
