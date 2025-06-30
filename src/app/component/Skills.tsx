@@ -5,7 +5,7 @@ import ShareButton from "./ShareButton";
 export default function Skills() {
     <ShareButton text="Why Choose Me" icon={<ArrowDown size={18} />} />
     return (
-        <div className="lg:px-10 z-20 relative -mt-10">
+        <div className="md:px-4 lg:px-8 z-20 relative -mt-10">
             <section className="bg-black text-white py-16 px-6 lg:rounded-3xl rounded-2xl">
                 <div className="max-w-6xl mx-auto">
 

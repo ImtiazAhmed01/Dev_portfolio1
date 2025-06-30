@@ -2,6 +2,7 @@
 
 // import { useTheme } from "../contexts/ThemeProvider";
 import React, { useState, useEffect } from "react";
+import SecondaryShareButton from "./SecondaryShareButton";
 
 
 export default function Navbar() {
@@ -40,30 +41,27 @@ export default function Navbar() {
                         </a>
                     </li>
                     <li className="mt-3">
-                        <a href="/about" className={`hover:text-orange-500 ${isActive("/about")}`}>
+                        <a href="/" className={`hover:text-orange-500 ${isActive("/about")}`}>
                             About
                         </a>
                     </li>
                     <li className="mt-3">
-                        <a href="/portfolio" className={`hover:text-orange-500 ${isActive("/portfolio")}`}>
+                        <a href="/" className={`hover:text-orange-500 ${isActive("/portfolio")}`}>
                             Portfolio
                         </a>
                     </li>
                     <li className="mt-3">
-                        <a href="/blog" className={`hover:text-orange-500  ${isActive("/blog")}`}>
+                        <a href="/" className={`hover:text-orange-500  ${isActive("/blog")}`}>
                             Blog
                         </a>
                     </li>
                     <li>
-                        <a href="/" className={`hover:text-orange-500 border p-3 rounded-full flex gap-2 ${isActive("/start-project")}`}>
-                            <img
-                                width="20"
-                                height="10"
-                                src="https://img.icons8.com/ios/50/circled-right-2.png"
-                                alt="circled-right-2"
-                            />
-                            <p>Start Project</p>
-                        </a>
+                        <SecondaryShareButton
+                            text="Start Project"
+                            iconSrc="https://img.icons8.com/?size=100&id=1QOLyXCSaEtK&format=png&color=000000"
+                            onClick={() => console.log("Start Project Clicked!")}
+                        />
+
                     </li>
                 </ul>
 
